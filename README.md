@@ -23,3 +23,17 @@ If you want to use but you find bugs please let me know...
 
 ---------------
 
+# Installing using conda
+Below is a set of commands to configure the tool on windows 10 using conda.  Note pywinauto must be installed and comtypes `1.1.8` seems to have compatibility issues.
+
+```
+conda create --name PyPlecsTest --clone base  
+conda activate PyPlecsTest
+conda install git
+conda install -c conda-forge pywinauto 
+conda install -c conda-forge comtypes=1.1.7
+pip install git+git://github.com/tinix84/pyplecs.git
+```
+
+
+
