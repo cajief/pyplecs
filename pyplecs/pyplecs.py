@@ -16,6 +16,7 @@ import scipy.io as sio
 
 command = r"C:/Program Files/Plexim/PLECS 4.2 (64 bit)/plecs.exe"
 command = r"C:/Program Files/Plexim/PLECS 4.3 (64 bit)/plecs.exe"
+command = r"C:/Program Files/Plexim/PLECS 4.5 (64 bit)/plecs.exe"
 # command = r"C:\Users\tinix\Documents\Plexim\PLECS 4.3 (64 bit)\PLECS.exe"
 
 def load_mat_file(file):
@@ -128,7 +129,7 @@ class PlecsApp:
         return cpu_usage
 
     def run_simulation_by_gui(self, plecs_mdl):
-        mdl_app = self.app.connect(title=str(plecs_mdl._model_name), class_name='Qt5QWindowIcon')
+        mdl_app = self.app.connect(title=str(plecs_mdl._model_name))
         mdl_app[str(plecs_mdl._name)].set_focus()
         mdl_app[str(plecs_mdl._name)].menu_select('Simulation')
         pywinauto.keyboard.send_keys('{DOWN}')
@@ -139,7 +140,7 @@ class PlecsApp:
     def load_file(self, plecs_mdl, mode='XML-RPC'):
         if mode=="gui":
             pwa_app = pywinauto.application.Application()
-            qtqwindowicon = pwa_app.connect(title=u'Library Browser', class_name='Qt5QWindowIcon').Qt5QWindowIcon
+            qtqwindowicon = pwa_app.connect(title=u'Library Browser', class_name='Qt5152QtPleximQWindowIcon').Qt5QWindowIcon
             qtqwindowicon.set_focus()
             pywinauto.keyboard.send_keys('^o')
             #TODO: filling window open file

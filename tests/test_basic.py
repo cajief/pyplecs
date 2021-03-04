@@ -157,6 +157,12 @@ class BasicTestSuite(unittest.TestCase):
     def test_gui_simulation(self):
         """[summary]
         """
+        
+        # creating processes
+
+        plecs42 = pyplecs.PlecsApp()
+        plecs42.open_plecs()
+        
         sim_file_path_obj = Path('../data/simple_buck.plecs')
         full_sim_name = str(sim_file_path_obj.absolute())
         buck_mdl = pyplecs.GenericConverterPlecsMdl(full_sim_name)
@@ -184,11 +190,6 @@ class BasicTestSuite(unittest.TestCase):
         buck_mdl_02_server = pyplecs.PlecsServer(buck_mdl_02.folder,
                                                  buck_mdl_02.simulation_name)
 
-        # creating processes
-
-        plecs42 = pyplecs.PlecsApp()
-        plecs42.open_plecs()
-
         buck_mdl_01_server.load()
         time.sleep(1)
         plecs42.run_simulation_by_gui(plecs_mdl=buck_mdl_01)
@@ -205,6 +206,7 @@ class BasicTestSuite(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
-    # test=BasicTestSuite()
-    # test.test04_pyplecs_xrpc_server()
+    #unittest.main()
+    test=BasicTestSuite()
+    #test.test04_pyplecs_xrpc_server()
+    test.test_gui_simulation()
