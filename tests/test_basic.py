@@ -206,7 +206,7 @@ class BasicTestSuite(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    #unittest.main()
-    test=BasicTestSuite()
+    unittest.main()
+    #test=BasicTestSuite()
     #test.test04_pyplecs_xrpc_server()
-    test.test_gui_simulation()
+    #test.test_gui_simulation()
