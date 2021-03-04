@@ -32,7 +32,7 @@ conda activate PyPlecsTest
 conda install git
 conda install -c conda-forge pywinauto 
 conda install -c conda-forge comtypes=1.1.7
-pip install git+git://github.com/tinix84/pyplecs.git
+pip install git+git://github.com/cajief/pyplecs.git
 ```
 
 
